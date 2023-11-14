@@ -1,4 +1,4 @@
-export const fruits = [
+export const shoes = [
   {
     name: "Tenis Vermelho",
     pieces: "5 unid",
@@ -25,7 +25,7 @@ export const fruits = [
   },
 ];
 
-export const vegetables = [
+export const shirt = [
   {
     name: "Camiseta Bonita",
     pieces: "1 unid",
@@ -60,6 +60,6 @@ export const Dropdown = [
   },
   {
     title: "Tamanhos",
-    content: "Disponíveis em todos os tamanhos, temporada de encomendas aberta",
+    content: "Disponíveis em todos os tamanhos, temporada de encomendas aberta.",
   },
 ];

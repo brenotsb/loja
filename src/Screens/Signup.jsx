@@ -16,50 +16,44 @@ import { useNavigation } from "@react-navigation/native";
 import uuid from 'react-native-uuid';
 
 const Signup = () => {
-  const [isVisbile, setisVisbile] = useState(true);
-  const [userCrendetials, setuserCrendetials] = useState({
+  const [isVisible, setIsVisible] = useState(true);
+  const [userCredentials, setUserCredentials] = useState({
     name: "",
     email: "",
     password: "",
   });
-  const { email, password, name } = userCrendetials;
+  const { email, password, name } = userCredentials;
 
+  const uid = uuid.v4();
 
-const uid=uuid.v4()
   const userAccount = () => {
-    createUserWithEmailAndPassword(authentication, email, password)
-      .then(() => {
-        nav.navigate('Login')
-        setDoc(doc(database, "users",uid ), {
-          username:name,
-          email:email,
-          id:authentication.currentUser.uid
-        });
-      })
-      .catch((error) => {
-        if (error.code === "auth/email-already-in-use") {
-          Alert.alert("That email address is already in use!");
-        }
+    // Simulação de cadastro
+    // Em um ambiente real, você substituiria esta lógica pela interação com o seu backend ou armazenamento local seguro.
 
-        if (error.code === "auth/invalid-email") {
-          console.log("That email address is invalid!");
-        }
+    // Aqui, estamos apenas exibindo os dados do usuário cadastrado, um "bd interno".
+    console.log("Usuário cadastrado:", userCredentials);
 
-        console.error(error);
-      });
+    // Limpar os campos após o cadastro (simulação)
+    setUserCredentials({
+      name: "",
+      email: "",
+      password: "",
+    });
+
+    Alert.alert("Cadastro realizado com sucesso!");
   };
 
   const nav = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: myColors.secondary }}>
       <StatusBar />
-      <ScrollView style={{ flex: 1, paddingTop: 30 }}>
+      <ScrollView style={{ flex: 1, paddingTop: 2 }}>
         <Image
           style={{ alignSelf: "center" }}
           source={require("../assets/mainIcon.png")}
         />
 
-        <View style={{ paddingHorizontal: 20, marginTop: 50 }}>
+        <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
           <Text
             style={{ color: myColors.third, fontSize: 24, fontWeight: "500" }}
           >
@@ -89,7 +83,7 @@ const uid=uuid.v4()
             maxLength={9}
             value={name}
             onChangeText={(val) => {
-              setuserCrendetials({ ...userCrendetials, name: val });
+              setUserCredentials({ ...userCredentials, name: val });
             }}
             keyboardType="name-phone-pad"
             style={{
@@ -100,7 +94,6 @@ const uid=uuid.v4()
             }}
           />
 
-          {/* ////// */}
           <Text
             style={{
               fontSize: 16,
@@ -114,7 +107,7 @@ const uid=uuid.v4()
           <TextInput
             value={email}
             onChangeText={(val) => {
-              setuserCrendetials({ ...userCrendetials, email: val });
+              setUserCredentials({ ...userCredentials, email: val });
             }}
             keyboardType="email-address"
             style={{
@@ -146,23 +139,22 @@ const uid=uuid.v4()
             <TextInput
               value={password}
               onChangeText={(val) => {
-                setuserCrendetials({ ...userCrendetials, password: val });
+                setUserCredentials({ ...userCredentials, password: val });
               }}
-              secureTextEntry={isVisbile}
+              secureTextEntry={isVisible}
               maxLength={6}
               keyboardType="ascii-capable"
               style={{
                 fontSize: 17,
                 marginTop: 15,
-
                 flex: 0.9,
               }}
             />
             <Ionicons
               onPress={() => {
-                setisVisbile(!isVisbile);
+                setIsVisible(!isVisible);
               }}
-              name={isVisbile == true ? "eye-off-outline" : "eye-outline"}
+              name={isVisible == true ? "eye-off-outline" : "eye-outline"}
               size={24}
               color="black"
             />
@@ -181,7 +173,7 @@ const uid=uuid.v4()
               opacity: 0.7,
             }}
           >
-            Seja bem-vindo
+            Direitos reservados Amb_neakers
           </Text>
           <TouchableOpacity
             onPress={userAccount}
@@ -226,7 +218,7 @@ const uid=uuid.v4()
                   fontWeight: "600",
                 }}
               >
-                Login 
+                Login
               </Text>
             </TouchableOpacity>
           </View>

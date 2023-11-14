@@ -58,7 +58,7 @@ const Cart = () => {
                 flexDirection: "row",
               }}
             >
-              {/* ///Child 1 */}
+              {/* ///extra */}
 
               <View
                 style={{
@@ -75,7 +75,7 @@ const Cart = () => {
                 />
               </View>
 
-              {/* ///Child 2 */}
+              {/* ///extra */}
               <View
                 style={{
                   flex: 0.7,
@@ -115,7 +115,7 @@ const Cart = () => {
                     marginTop: 10,
                   }}
                 >
-                  {/* ///Quantity Container// */}
+                  {/* ///Quantidade Container// */}
                   <View
                     style={{
                       flexDirection: "row",
@@ -145,7 +145,7 @@ const Cart = () => {
                     />
                   </View>
 
-                  {/* ///Quantity Container// */}
+                  {/* ///Quantidade Container// */}
 
                   <Text style={{ fontSize: 22, fontWeight: "600" }}>
                     R$ {item.quantity * item.price}
@@ -153,7 +153,7 @@ const Cart = () => {
                 </View>
               </View>
 
-              {/* ///Child 2 */}
+              {/* ///Container extra */}
             </View>
           )}
         />
@@ -181,7 +181,7 @@ const Cart = () => {
             }}
           >
             <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
-              checkout
+              Efetuar Pagamento!
             </Text>
             <Text style={{ fontSize: 15, fontWeight: "500", color: "white" }}>
               R$ {amount}

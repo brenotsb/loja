@@ -6,7 +6,7 @@ import HomeSearch from "../Components/HomeSearch";
 import HomeBanner from "../Components/HomeBanner";
 import ProductsTitle from "../Components/ProductsTitle";
 import ProductsCarousel from "../Components/ProductsCarousel";
-import { fruits, vegetables } from "../Utils/Date";
+import { shoes, shirt } from "../Utils/Date";
 
 
 const Home = () => {
@@ -30,9 +30,9 @@ const Home = () => {
           <HomeSearch />
           <HomeBanner />
           <ProductsTitle title="Ofertas" />
-          <ProductsCarousel data={fruits} />
+          <ProductsCarousel data={shoes} />
           <ProductsTitle title="Mais vendidos" />
-          <ProductsCarousel data={vegetables} />
+          <ProductsCarousel data={shirt} />
         </View>
       </ScrollView>
     </SafeAreaView>

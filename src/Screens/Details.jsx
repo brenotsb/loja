@@ -71,7 +71,7 @@ const Details = ({ route }) => {
           <MaterialIcons name="favorite-border" size={30} color="black" />
         </View>
         <Text style={{ marginTop: 5, fontSize: 15, color: "grey" }}>
-          {pieces}, Price
+          {pieces}
         </Text>
         <Text
           style={{
@@ -103,7 +103,7 @@ const Details = ({ route }) => {
               }}
             >
               <Text style={{ color: "black", fontSize: 18, fontWeight: "700" }}>
-                Adicionado a cesta
+                Adicionado ao carrinho
               </Text>
             </TouchableOpacity>
           ) : (
@@ -122,7 +122,7 @@ const Details = ({ route }) => {
               }}
             >
               <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
-                Adicionar a cesta
+                Adicionar ao carrinho
               </Text>
             </TouchableOpacity>
           )}

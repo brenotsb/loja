@@ -16,25 +16,26 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Login = () => {
   const nav = useNavigation();
-  const [loginCredentials, setloginCredentials] = useState({
+  const [loginCredentials, setLoginCredentials] = useState({
     email: "",
     password: "",
   });
-  const [isVisbile, setisVisbile] = useState(true);
+  const [isVisbile, setIsVisible] = useState(true);
 
   const { email, password } = loginCredentials;
 
   const loginUser = () => {
-    signInWithEmailAndPassword(authentication, email, password)
-      .then((value) => {
-        if (value) {
-          AsyncStorage.setItem("id", "success");
-          nav.replace("Home");
-        }
-      })
-      .catch((err) => {
-        Alert.alert(err.message);
-      });
+    // Simulação de login (credenciais pré-definidas)
+    const predefinedEmail = "user@hotmail.com";
+    const predefinedPassword = "123456";
+
+    if (email === predefinedEmail && password === predefinedPassword) {
+      // Lógica de login simulada com um alerta
+      AsyncStorage.setItem("id", "success");
+      nav.replace("Home");
+    } else {
+      Alert.alert("Credenciais inválidas");
+    }
   };
 
   return (
@@ -74,7 +75,7 @@ const Login = () => {
           <TextInput
             value={email}
             onChangeText={(val) => {
-              setloginCredentials({ ...loginCredentials, email: val });
+              setLoginCredentials({ ...loginCredentials, email: val });
             }}
             keyboardType="email-address"
             style={{
@@ -85,8 +86,6 @@ const Login = () => {
             }}
           />
 
-          {/* ////// */}
-
           <Text
             style={{
               fontSize: 16,
@@ -95,7 +94,7 @@ const Login = () => {
               marginTop: 40,
             }}
           >
-            senha
+            Senha
           </Text>
           <View
             style={{
@@ -109,7 +108,7 @@ const Login = () => {
             <TextInput
               value={password}
               onChangeText={(val) => {
-                setloginCredentials({ ...loginCredentials, password: val });
+                setLoginCredentials({ ...loginCredentials, password: val });
               }}
               secureTextEntry={isVisbile}
               maxLength={6}
@@ -117,13 +116,12 @@ const Login = () => {
               style={{
                 fontSize: 17,
                 marginTop: 15,
-
                 flex: 0.9,
               }}
             />
             <Ionicons
               onPress={() => {
-                setisVisbile(!isVisbile);
+                setIsVisible(!isVisbile);
               }}
               name={isVisbile == true ? "eye-off-outline" : "eye-outline"}
               size={24}
@@ -137,7 +135,6 @@ const Login = () => {
               fontWeight: "400",
               color: "black",
               marginTop: 15,
-
               textAlign: "right",
             }}
           >
@@ -147,7 +144,7 @@ const Login = () => {
             onPress={loginUser}
             style={{
               backgroundColor: myColors.primary,
-              marginTop: 30,
+              marginTop: 10,
               height: 70,
               borderRadius: 20,
               justifyContent: "center",

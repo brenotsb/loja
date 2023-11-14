@@ -1,5 +1,5 @@
 {
-  "name": "hortifruti",
+  "name": "amb_sneakers",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
     "@reduxjs/toolkit": "^1.9.5",
-    "expo": "^49.0.17",
+    "expo": "^49.0.18",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

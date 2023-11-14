@@ -9,7 +9,7 @@ const cartSlice = createSlice({
         (value) => value.name == actions.payload.name
       );
       if (isAvailable) {
-        actions.payload["quantity"] += 1; // increase quantity by one
+        actions.payload["quantity"] += 1; // numero de produtos
       } else {
         state.push({ ...actions.payload, quantity: 1 });
       }

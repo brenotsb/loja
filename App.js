@@ -2,7 +2,6 @@ import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Splash from "./src/Screens/Splash";
 import Signup from "./src/Screens/Signup";
 import Login from "./src/Screens/Login";
 import Home from "./src/Screens/Home";
@@ -19,12 +18,11 @@ export default function App() {
     <Provider store={Store}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="Login"
           screenOptions={{
             headerShown: false,
           }}
         >
-          <Stack.Screen name="Splash" component={Splash} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Home" component={Home} />
