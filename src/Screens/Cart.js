@@ -104,7 +104,7 @@ const Cart = () => {
                   />
                 </View>
                 <Text style={{ fontSize: 17, color: "grey", marginTop: 5 }}>
-                  {item.pieces}, Price
+                  {item.pieces}, 
                 </Text>
                 <View
                   style={{
